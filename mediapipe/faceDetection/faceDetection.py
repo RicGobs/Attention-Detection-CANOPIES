@@ -9,6 +9,10 @@ face1 =  mp_facedetector.FaceDetection(
 face2 =  mp_facedetector.FaceDetection(
     model_selection=1, min_detection_confidence=0.5) #high distance, red
 
+#I have created three "if" because I wanted to use both models for high and low distance. When only a model detects a face is not a problem; but when 
+#both model detect a face, I have to show both boxes because I can't compare the accuracy of the two models cause of they don't detect the same landmarks.
+#For now I'm ok with this implementation, but it can be improved.
+
 while cap.isOpened():
         s, img = cap.read()
         #convert BGR in RGB (I understood that is better on online paper)
