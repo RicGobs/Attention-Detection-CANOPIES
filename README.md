@@ -12,5 +12,15 @@ Concluse queste due parti comincerò a lavorare sul modello da zero in pytorch.
 
 Per la cartella mediapipe, tutti i programmi sono eseguibili scaricando mediapipe e openCV.
 
+----
 
+The project is divided into two parts:
+
+- implement the system using the mediapipe model;
+
+- implement the system by creating a model from scratch on pytorch.
+
+For now I have implemented the face detection with mediapipe, but I am trying to improve the code in such a way as to use the best model based on the distance from the robot chamber. I am also working on eye tracking, starting from the mediapipe face mesh, to understand when the person is looking at the robot. Once these two parts have been completed, I will start working on the model from scratch in pytorch.
+
+For the mediapipe folder, all programs are executable by downloading mediapipe and openCV.
 
