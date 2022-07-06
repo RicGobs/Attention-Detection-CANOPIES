@@ -36,7 +36,7 @@ R_DOWN=[374]
 def distance_x(p1,p2):
     x1,y1=p1.ravel()
     x2,y2=p2.ravel()
-    distance=math.sqrt((x2-x1)**2) #così calcolo solo destra e sinistra
+    distance=math.sqrt((x2-x1)**2+(y2-y1)**2) #così calcolo solo destra e sinistra
     if distance==0:
         distance=1
     return distance
@@ -44,7 +44,7 @@ def distance_x(p1,p2):
 def distance_y(p1,p2):
     x1,y1=p1.ravel()
     x2,y2=p2.ravel()
-    distance=math.sqrt((y2-y1)**2) #così calcolo solo sopra e sotto
+    distance=math.sqrt((y2-y1)**2+(x2-x1)**2) #così calcolo solo sopra e sotto
     if distance==0:
         distance=1
     return distance
@@ -118,24 +118,26 @@ while True:
 
            (l_x,l_y), l_radius=cv.minEnclosingCircle(punti_mesh_face[LEFT_IRIS])
            (r_x,r_y), l_radius=cv.minEnclosingCircle(punti_mesh_face[RIGHT_IRIS])
-
+           print([l_x,l_y],[r_x,r_y])
            center_left=np.array([l_x,l_y],dtype=np.int32) #dove sta guardando occhio sinistro
            center_right=np.array([r_x,r_y],dtype=np.int32) #dove sta guardando occhio destro
 
            cv.circle(frame,center_left,int(l_radius),(255,0,255),1,cv.LINE_AA)
-           cv.circle(frame,center_right,int(l_radius),(255,0,255),1,cv.LINE_AA)
-           cv.circle(frame,punti_mesh_face[R_RIGHT][0],3,(255,255,255),-1,cv.LINE_AA)
-           cv.circle(frame,punti_mesh_face[R_LEFT][0],3,(0,255,255),-1,cv.LINE_AA)
-           cv.circle(frame,punti_mesh_face[L_RIGHT][0],3,(255,255,255),-1,cv.LINE_AA)
-           cv.circle(frame,punti_mesh_face[L_LEFT][0],3,(0,255,255),-1,cv.LINE_AA)
-           cv.circle(frame,punti_mesh_face[R_DOWN][0],3,(255,255,255),-1,cv.LINE_AA)
-           cv.circle(frame,punti_mesh_face[R_UP][0],3,(0,255,255),-1,cv.LINE_AA)
-           cv.circle(frame,punti_mesh_face[L_DOWN][0],3,(255,255,255),-1,cv.LINE_AA)
-           cv.circle(frame,punti_mesh_face[L_UP][0],3,(0,255,255),-1,cv.LINE_AA)
-           cv.polylines(frame,[punti_mesh_face[LEFT_EYE]],True,(0,255,0),1,cv.LINE_AA)
-           cv.polylines(frame,[punti_mesh_face[RIGHT_EYE]],True,(0,255,0),1,cv.LINE_AA)
-           cv.polylines(frame,[punti_mesh_face[LEFT_IRIS]],True,(255,0,0),1,cv.LINE_AA)
-           cv.polylines(frame,[punti_mesh_face[RIGHT_IRIS]],True,(255,0,0),1,cv.LINE_AA)
+           cv.circle(frame,center_right,int(l_radius),(255,0,255),1,cv.LINE_AA)        
+           cv.circle(frame, center_left, radius=2, color=(0, 255, 0), thickness=-1)
+           cv.circle(frame, center_right, radius=2, color=(0, 255, 0), thickness=-1)
+           #cv.circle(frame,punti_mesh_face[R_RIGHT][0],3,(255,255,255),-1,cv.LINE_AA)
+           #cv.circle(frame,punti_mesh_face[R_LEFT][0],3,(0,255,255),-1,cv.LINE_AA)
+           #cv.circle(frame,punti_mesh_face[L_RIGHT][0],3,(255,255,255),-1,cv.LINE_AA)
+           #cv.circle(frame,punti_mesh_face[L_LEFT][0],3,(0,255,255),-1,cv.LINE_AA)
+           #cv.circle(frame,punti_mesh_face[R_DOWN][0],3,(255,255,255),-1,cv.LINE_AA)
+           #cv.circle(frame,punti_mesh_face[R_UP][0],3,(0,255,255),-1,cv.LINE_AA)
+           #cv.circle(frame,punti_mesh_face[L_DOWN][0],3,(255,255,255),-1,cv.LINE_AA)
+           #cv.circle(frame,punti_mesh_face[L_UP][0],3,(0,255,255),-1,cv.LINE_AA)
+           #cv.polylines(frame,[punti_mesh_face[LEFT_EYE]],True,(0,255,0),1,cv.LINE_AA)
+           #cv.polylines(frame,[punti_mesh_face[RIGHT_EYE]],True,(0,255,0),1,cv.LINE_AA)
+           #cv.polylines(frame,[punti_mesh_face[LEFT_IRIS]],True,(255,0,0),1,cv.LINE_AA)
+           #cv.polylines(frame,[punti_mesh_face[RIGHT_IRIS]],True,(255,0,0),1,cv.LINE_AA)
 
            iris_pos1,val1=iris_right_horizontal(center_right,punti_mesh_face[R_RIGHT][0],punti_mesh_face[R_LEFT][0])
            iris_pos2,val2=iris_left_horizontal(center_left,punti_mesh_face[L_RIGHT][0],punti_mesh_face[L_LEFT][0])
