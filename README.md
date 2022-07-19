@@ -17,13 +17,13 @@ _Svantaggi:_ sistema non affidabile in situazioni non comuni quali copertura del
 
 Librerie usate: Mediapipe e OpenCV 
 
-####Entrambe le persone sono attente, la prima viene evidenziata
+#### Entrambe le persone sono attente, la prima viene evidenziata
 ![Logo](https://github.com/RicGobs/LabVision/blob/main/mediapipe/EyeRecognition/solution1.jpg)
 
-####Solo la persona più vicina(la prima) è attenta, la prima viene evidenziata
+#### Solo la persona più vicina(la prima) è attenta, la prima viene evidenziata
 ![Logo](https://github.com/RicGobs/LabVision/blob/main/mediapipe/EyeRecognition/solution2.jpg)
 
-####Solo la persona più lonatana(la seconda) è attenta, la seconda viene evidenziata
+#### Solo la persona più lonatana(la seconda) è attenta, la seconda viene evidenziata
 ![Logo](https://github.com/RicGobs/LabVision/blob/main/mediapipe/EyeRecognition/solution3.jpg)
 
 ### 2. PYTORCH
