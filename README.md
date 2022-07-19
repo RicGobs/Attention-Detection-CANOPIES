@@ -20,11 +20,11 @@ Librerie usate: Mediapipe e OpenCV
 ####Entrambe le persone sono attente, la prima viene evidenziata
 ![Logo](https://github.com/RicGobs/LabVision/blob/main/mediapipe/EyeRecognition/solution1.jpg)
 
-####Entrambe le persone sono attente, la prima viene evidenziata
+####Solo la persona più vicina(la prima) è attenta, la prima viene evidenziata
 ![Logo](https://github.com/RicGobs/LabVision/blob/main/mediapipe/EyeRecognition/solution2.jpg)
 
-####Entrambe le persone sono attente, la prima viene evidenziata
-![Logo](https://github.com/RicGobs/LabVision/blob/main/mediapipe/EyeRecognition/solution2.jpg)
+####Solo la persona più lonatana(la seconda) è attenta, la seconda viene evidenziata
+![Logo](https://github.com/RicGobs/LabVision/blob/main/mediapipe/EyeRecognition/solution3.jpg)
 
 ### 2. PYTORCH
 L'implementazione dell'attention detection non è completa, si sta ricercando al meglio i landmark del voto concentrandosi su quelli delle iridi degli occhi. Addestrato al meglio il modello per fare questo, si concluderà con la classificazione dell'attenzione dei soggetti. Il sistema usa un dataset creato grazie alla prima parte del progetto, l'inferenza permessa è sufficiente per osservare che il modello riesce a predire la zona vicino agli occhi ma la sua accuratezza è minore di quella di Mediapipe.
