@@ -36,7 +36,11 @@ _Svantaggi:_ online non sono presenti dataset per il riconoscimento dei 478 land
 
 Librerie usate: Pytorch, Pytorch models, Mediapipe per il dataset, OpenCV per rappresentare le immagini
 
+#### Risultato medio del sistema (verde=Ground truth, rosso=Prediction)
+![Logo](https://github.com/RicGobs/LabVision/blob/main/pyTorch/accuracy.png)
 
+#### Errore tipico di Mediapipe (verde=Ground truth, non completamente affidabile)
+![Logo](https://github.com/RicGobs/LabVision/blob/main/pyTorch/mediapipe_error.png)
 
 ----
 
