@@ -17,6 +17,8 @@ _Svantaggi:_ sistema non affidabile in situazioni non comuni quali copertura del
 
 Librerie usate: Mediapipe e OpenCV 
 
+![Logo](https://www.thevirusdoublezero.com/wp-content/uploads/2019/12/cyber_warfare.jpg.webp)
+
 ### 2. PYTORCH
 L'implementazione dell'attention detection non è completa, si sta ricercando al meglio i landmark del voto concentrandosi su quelli delle iridi degli occhi. Addestrato al meglio il modello per fare questo, si concluderà con la classificazione dell'attenzione dei soggetti. Il sistema usa un dataset creato grazie alla prima parte del progetto, l'inferenza permessa è sufficiente per osservare che il modello riesce a predire la zona vicino agli occhi ma la sua accuratezza è minore di quella di Mediapipe.
 Le immagini vengono passate con tre numpy array: uno per i nomi delle immagini, uno con i landmarks ed uno con il 0/1 per la classificazione dell'attenzione. Viene ritagliata la faccia dall'immagine e viene data in pasto al modello. E' stata provata ResNet18 la quale è troppo piccola per risolvere il problema, e ResNet50 che svolge un lavoro mediocre. In futuro si proveranno ulteriori modelli.
