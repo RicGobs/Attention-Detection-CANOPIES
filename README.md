@@ -44,7 +44,7 @@ Si è riconosciuta l'attenzione in vista di più persone di fronte alla camera:
 L'implementazione dell'attention detection non è completa, si sta ricercando al meglio i landmark del voto concentrandosi su quelli delle iridi degli occhi. Addestrato al meglio il modello per fare questo, si concluderà con la classificazione dell'attenzione dei soggetti. Il sistema usa un dataset creato grazie alla prima parte del progetto, l'inferenza permessa è sufficiente per osservare che il modello riesce a predire la zona vicino agli occhi ma la sua accuratezza è minore di quella di Mediapipe.
 Le immagini vengono passate con tre numpy array: uno per i nomi delle immagini, uno con i landmarks ed uno con il 0/1 per la classificazione dell'attenzione. Viene ritagliata la faccia dall'immagine e viene data in pasto al modello. Sono stati provati diversi modelli di ResNet:
 
-ResNet18 -> troppo piccola per il modello, MinValidLoss = . . . (epoch=.../50)
+ResNet18 -> troppo piccola per il modello (ma dopo aver sistemato il dataset, dà buoni risultati), MinValidLoss = 0.0006 (epoch = 46/50)
 
 ResNet34 -> raggiunge buoni risultati, MinValidLoss = 0.0006 (epoch=46/50) 
 
@@ -99,7 +99,7 @@ Used libraries: Mediapipe and OpenCV
 The implementation of attention detection is not complete, we are researching the landmarks of the vote by focusing on those of the irises of the eyes. Trained the model best to do this, it will end with the classification of the subjects' attention. The system uses a dataset created thanks to the first part of the project, the allowed inference is sufficient to observe that the model is able to predict the area near the eyes but its accuracy is less than that of Mediapipe.
 The images are passed with three numpy arrays: one for the image names, one with the landmarks and one with the 0/1 for the attention classification. The face is cut out of the image and fed to the model. Several ResNet models have been tried:
 
-ResNet18 -> too small for the model, MinValidLoss =. . . (epoch = ... / 50)
+ResNet18 -> too small for the model (but after the improving of the dataset it works well), MinValidLoss = 0.0006 (epoch = 46/50)
 
 ResNet34 -> achieves good results, MinValidLoss = 0.0006 (epoch = 46/50)
 
