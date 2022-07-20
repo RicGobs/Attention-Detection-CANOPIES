@@ -51,7 +51,8 @@ Librerie usate: Pytorch, Pytorch models, Mediapipe per il dataset, OpenCV per ra
 
 
 #### Risultato medio del sistema (verde=Ground truth, rosso=Prediction)
-![Logo](https://github.com/RicGobs/LabVision/blob/main/pyTorch/accuracy.png)
+![Logo](https://github.com/RicGobs/LabVision/blob/main/pyTorch/accuracy.png) 
+![Logo](https://github.com/RicGobs/LabVision/blob/main/pyTorch/mediapipe_error.png)
 
 #### Errore tipico di Mediapipe (verde=Ground truth, non completamente affidabile)
 ![Logo](https://github.com/RicGobs/LabVision/blob/main/pyTorch/mediapipe_error.png)
@@ -78,7 +79,19 @@ Used libraries: Mediapipe and OpenCV
 
 ### 2. PYTORCH
 The implementation of attention detection is not complete, we are researching the landmarks of the vote by focusing on those of the irises of the eyes. Trained the model best to do this, it will end with the classification of the subjects' attention. The system uses a dataset created thanks to the first part of the project, the allowed inference is sufficient to observe that the model is able to predict the area near the eyes but its accuracy is less than that of Mediapipe.
-The images are passed with three numpy arrays: one for the image names, one with the landmarks and one with the 0/1 for the attention classification. The face is cut out of the image and fed to the model. We tried ResNet18 which is too small to solve the problem, and ResNet50 which does a mediocre job. Further models will be tested in the future.
+The images are passed with three numpy arrays: one for the image names, one with the landmarks and one with the 0/1 for the attention classification. The face is cut out of the image and fed to the model. Several ResNet models have been tried:
+
+ResNet18 -> too small for the model, MinValidLoss =. . . (epoch = ... / 50)
+
+ResNet34 -> achieves good results, MinValidLoss = 0.0006 (epoch = 46/50)
+
+ResNet50 -> achieves good results, MinValidLoss = 0.0006 (epoch = 46/50)
+
+ResNet101 -> not reliable since the loss after epoch 12 rises and remains constant, MinValidLoss = 0.0011 (epoch = 12/40)
+
+ResNet152 -> not reliable since the loss after epoch 12 rises, MinValidLoss = 0.0011 (epoch = 11/40)
+
+It is believed that ResNet34 and ResNet50 perform well for this task, ResNet18 is too small as a network, ResNet101 and ResNet152 are models too complicated for the problem and its characteristics (such as the limited dataset)
 
 _Advantages:_ more structured system on which the problems presented above on Mediapipe can be solved.
 
