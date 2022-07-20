@@ -30,15 +30,17 @@ Librerie usate: Mediapipe e OpenCV
 L'implementazione dell'attention detection non è completa, si sta ricercando al meglio i landmark del voto concentrandosi su quelli delle iridi degli occhi. Addestrato al meglio il modello per fare questo, si concluderà con la classificazione dell'attenzione dei soggetti. Il sistema usa un dataset creato grazie alla prima parte del progetto, l'inferenza permessa è sufficiente per osservare che il modello riesce a predire la zona vicino agli occhi ma la sua accuratezza è minore di quella di Mediapipe.
 Le immagini vengono passate con tre numpy array: uno per i nomi delle immagini, uno con i landmarks ed uno con il 0/1 per la classificazione dell'attenzione. Viene ritagliata la faccia dall'immagine e viene data in pasto al modello. Sono stati provati diversi modelli di ResNet:
 
-ResNet18 -> troppo piccola per il modello, MinValidLoss = . . .
+ResNet18 -> troppo piccola per il modello, MinValidLoss = . . . (epoch=.../50)
 
-ResNet34 -> raggiunge buoni risultati, MinValidLoss = 0,0006
+ResNet34 -> raggiunge buoni risultati, MinValidLoss = 0.0006 (epoch=46/50) 
 
-ResNet50 -> troppo piccola per il modello, MinValidLoss = 0,0006
+ResNet50 -> raggiunge buoni risultati, MinValidLoss = 0.0006 (epoch=46/50)
 
-ResNet101 -> troppo piccola per il modello, MinValidLoss = 0,0006
+ResNet101 -> non affidabile poiché la loss dopo l'epoca 12 si rialza e rimane costante, MinValidLoss = 0.0011 (epoch=12/40)
 
-ResNet152 -> troppo piccola per il modello, MinValidLoss = 0,0006
+ResNet152 -> non affidabile poiché la loss dopo l'epoca 12 si rialza, MinValidLoss = 0.0011 (epoch=11/40)
+
+Si ritiene che ResNet34 e ResNet50 si comportano bene per questo task, ResNet18 è troppo piccola come rete, ResNet101 e ResNet152 sono invece dei modelli troppo complicati per il problema e le sue caratteristiche (come il limitato dataset)
 
 _Vantaggi:_ sistema più strutturato sul quale si possono risolvere i problemi presentati in precedenza su Mediapipe.
 
@@ -78,9 +80,9 @@ Used libraries: Mediapipe and OpenCV
 The implementation of attention detection is not complete, we are researching the landmarks of the vote by focusing on those of the irises of the eyes. Trained the model best to do this, it will end with the classification of the subjects' attention. The system uses a dataset created thanks to the first part of the project, the allowed inference is sufficient to observe that the model is able to predict the area near the eyes but its accuracy is less than that of Mediapipe.
 The images are passed with three numpy arrays: one for the image names, one with the landmarks and one with the 0/1 for the attention classification. The face is cut out of the image and fed to the model. We tried ResNet18 which is too small to solve the problem, and ResNet50 which does a mediocre job. Further models will be tested in the future.
 
-_Advantages: _ more structured system on which the problems presented above on Mediapipe can be solved.
+_Advantages:_ more structured system on which the problems presented above on Mediapipe can be solved.
 
-_Disadvantages: _ online there are no datasets for the recognition of the 478 landmarks of the face nor those for the irises of the eyes, there are datasets that have from 20 to 68 landmarks but do not allow the recognition of the iris, only of the eye. This problem could be overcome with the use of a pose estimation but it is not the aim of the project. The dataset, observing some of the results obtained by Mediapipe is less performing than what was thought. Poor accuracy is therefore also due to the dataset that is not completely accurate.
+_Disadvantages:_ online there are no datasets for the recognition of the 478 landmarks of the face nor those for the irises of the eyes, there are datasets that have from 20 to 68 landmarks but do not allow the recognition of the iris, only of the eye. This problem could be overcome with the use of a pose estimation but it is not the aim of the project. The dataset, observing some of the results obtained by Mediapipe is less performing than what was thought. Poor accuracy is therefore also due to the dataset that is not completely accurate.
 
 Libraries used: Pytorch, Pytorch models, Mediapipe for the dataset, OpenCV to represent the images
 
