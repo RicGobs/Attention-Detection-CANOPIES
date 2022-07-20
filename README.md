@@ -51,11 +51,15 @@ Librerie usate: Pytorch, Pytorch models, Mediapipe per il dataset, OpenCV per ra
 
 
 #### Risultato medio del sistema (verde=Ground truth, rosso=Prediction)
-![Logo](https://github.com/RicGobs/LabVision/blob/main/pyTorch/accuracy.png) 
-![Logo](https://github.com/RicGobs/LabVision/blob/main/pyTorch/mediapipe_error.png)
+![Logo](https://github.com/RicGobs/LabVision/blob/main/pyTorch/photo/accuracy1.png) 
+![Logo](https://github.com/RicGobs/LabVision/blob/main/pyTorch/photo/accuracy2.png)
+![Logo](https://github.com/RicGobs/LabVision/blob/main/pyTorch/photo/accuracy3.png)
+![Logo](https://github.com/RicGobs/LabVision/blob/main/pyTorch/photo/accuracy4.png)
+
 
 #### Errore tipico di Mediapipe (verde=Ground truth, non completamente affidabile)
-![Logo](https://github.com/RicGobs/LabVision/blob/main/pyTorch/mediapipe_error.png)
+![Logo](https://github.com/RicGobs/LabVision/blob/main/pyTorch/photo/mediapipe_error1.png) 
+![Logo](https://github.com/RicGobs/LabVision/blob/main/pyTorch/photo/mediapipe_error2.png)
 
 ----
 
