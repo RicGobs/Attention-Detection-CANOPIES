@@ -1,4 +1,4 @@
-# Face and Attention Detection
+# Face Landmark and Attention Detection
 
 Il progetto è diviso in due parti:
 
