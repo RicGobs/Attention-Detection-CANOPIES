@@ -28,13 +28,25 @@ Librerie usate: Mediapipe e OpenCV
 
 ### 2. PYTORCH
 L'implementazione dell'attention detection non è completa, si sta ricercando al meglio i landmark del voto concentrandosi su quelli delle iridi degli occhi. Addestrato al meglio il modello per fare questo, si concluderà con la classificazione dell'attenzione dei soggetti. Il sistema usa un dataset creato grazie alla prima parte del progetto, l'inferenza permessa è sufficiente per osservare che il modello riesce a predire la zona vicino agli occhi ma la sua accuratezza è minore di quella di Mediapipe.
-Le immagini vengono passate con tre numpy array: uno per i nomi delle immagini, uno con i landmarks ed uno con il 0/1 per la classificazione dell'attenzione. Viene ritagliata la faccia dall'immagine e viene data in pasto al modello. E' stata provata ResNet18 la quale è troppo piccola per risolvere il problema, e ResNet50 che svolge un lavoro mediocre. In futuro si proveranno ulteriori modelli.
+Le immagini vengono passate con tre numpy array: uno per i nomi delle immagini, uno con i landmarks ed uno con il 0/1 per la classificazione dell'attenzione. Viene ritagliata la faccia dall'immagine e viene data in pasto al modello. Sono stati provati diversi modelli di ResNet:
+
+ResNet18 -> troppo piccola per il modello, MinValidLoss = . . .
+
+ResNet34 -> raggiunge buoni risultati, MinValidLoss = 0,0006
+
+ResNet50 -> troppo piccola per il modello, MinValidLoss = 0,0006
+
+ResNet101 -> troppo piccola per il modello, MinValidLoss = 0,0006
+
+ResNet152 -> troppo piccola per il modello, MinValidLoss = 0,0006
 
 _Vantaggi:_ sistema più strutturato sul quale si possono risolvere i problemi presentati in precedenza su Mediapipe.
 
-_Svantaggi:_ online non sono presenti dataset per il riconoscimento dei 478 landmarks del viso e nemmeno quelli per le iridi degli occhi, sono presenti dei dataset che hanno dai 20 ai 68 landmark ma non permettono il riconoscimento dell'iride, solamente dell'occhio. Questo problema potrebbe essere superato con l'utilizzo di un pose estimation ma non è l'obbiettivo del progetto. Il dataset, osservando alcuni dei risultati ottenuti da Mediapipe è meno performante di quello che si riteneva. La scarsa accuratezza è dovuta quindi anche al dataset non completamene preciso.
+_Svantaggi:_ online non sono presenti dataset per il riconoscimento dei 478 landmarks del viso e nemmeno quelli per le iridi degli occhi, sono presenti dei dataset che hanno dai 20 ai 68 landmark ma non permettono il riconoscimento dell'iride, solamente dell'occhio. Questo problema potrebbe essere superato con l'utilizzo di un pose estimation ma non è l'obbiettivo del progetto. Il dataset, osservando alcuni dei risultati ottenuti da Mediapipe è meno performante di quello che si riteneva. La scarsa accuratezza è dovuta quindi anche al dataset non completamente preciso.
 
 Librerie usate: Pytorch, Pytorch models, Mediapipe per il dataset, OpenCV per rappresentare le immagini
+
+
 
 #### Risultato medio del sistema (verde=Ground truth, rosso=Prediction)
 ![Logo](https://github.com/RicGobs/LabVision/blob/main/pyTorch/accuracy.png)
