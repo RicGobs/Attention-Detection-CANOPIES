@@ -20,7 +20,7 @@ Librerie usate: Mediapipe e OpenCV
 Si è iniziato riconoscendo attenzione delle persone singolarmente:
 
 #### Persona attenta
-![Logo](https://github.com/RicGobs/LabVision/blob/main/mediapipe/EyeRecognition/uomo_attento.jpg)
+![Logo](https://github.com/RicGobs/LabVision/blob/main/mediapipe/EyeRecognition/volto_attento.jpg)
 #### Persona NON attenta
 ![Logo](https://github.com/RicGobs/LabVision/blob/main/mediapipe/EyeRecognition/uomo_non_attento.jpg)
 
