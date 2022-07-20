@@ -6,5 +6,5 @@ weights_ResNet -> modelli riallenati sul dataset helen_finale
 
 file .npy -> numpy array con informazioni per il colab (nomi delle immagini, attenzione 0/1, coordinate di iris(R e L) e di bounding box)
 
-[drive] (https://drive.google.com/drive/folders/1gekpxbWRkZK98XAskimZVkB7Bhg5Jb2N?usp=sharing)
+[drive] https://drive.google.com/drive/folders/1gekpxbWRkZK98XAskimZVkB7Bhg5Jb2N?usp=sharing
 
