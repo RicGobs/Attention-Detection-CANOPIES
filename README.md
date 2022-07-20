@@ -17,6 +17,20 @@ _Svantaggi:_ sistema non affidabile in situazioni non comuni quali copertura del
 
 Librerie usate: Mediapipe e OpenCV 
 
+Si è iniziato riconoscendo attenzione delle persone singolarmente:
+
+#### Persona attenta
+![Logo](https://github.com/RicGobs/LabVision/blob/main/mediapipe/EyeRecognition/uomo_attento.jpg)
+#### Persona NON attenta
+![Logo](https://github.com/RicGobs/LabVision/blob/main/mediapipe/EyeRecognition/uomo_non_attento.jpg)
+
+Si è analizzata e trovata la struttura della faccia:
+
+#### Persona NON attenta con struttura del viso
+![Logo](https://github.com/RicGobs/LabVision/blob/main/mediapipe/EyeRecognition/solution.jpg)
+
+Si è riconosciuta l'attenzione in vista di più persone di fronte alla camera:
+
 #### Entrambe le persone sono attente, la prima viene evidenziata
 ![Logo](https://github.com/RicGobs/LabVision/blob/main/mediapipe/EyeRecognition/solution1.jpg)
 
