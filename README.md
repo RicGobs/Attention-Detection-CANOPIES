@@ -75,7 +75,7 @@ Librerie usate: Pytorch, Pytorch models, Mediapipe per il dataset, OpenCV per ra
 ![Logo](https://github.com/RicGobs/LabVision/blob/main/pyTorch/photo/mediapipe_error1.png) 
 ![Logo](https://github.com/RicGobs/LabVision/blob/main/pyTorch/photo/mediapipe_error2.png)
 
-file:https://github.com/RicGobs/LabVision/blob/main/pyTorch/resnet34_1.avi
+
 ----
 
 The project is divided into two parts:
