@@ -2,9 +2,9 @@
 
 Il progetto è diviso in due parti:
 
-1.implementare il sistema utilizzando il modello di mediapipe;
+1.implementare il sistema utilizzando il modello di mediapipe; implementazione disponibile in "Attention-Detection-CANOPIES-project/mediapipe/EyeRecognition/";
 
-2.implementare il sistema creando un modello da zero su pytorch.
+2.implementare il sistema creando un modello da zero su pytorch; implementazione disponibile in "".
 
 
 ### 1. MEDIAPIPE 
