@@ -45,9 +45,13 @@ L'implementazione dell'attention detection è completa. Il sistema usa un datase
 Le immagini vengono passate con tre numpy array: uno per i nomi delle immagini, uno con i landmarks ed uno con il 0/1 per la classificazione dell'attenzione. Viene ritagliata la faccia dall'immagine e viene data in pasto al modello. Sono stati provati diversi modelli di ResNet:
 
 ResNet18
+
 ResNet34
+
 ResNet50
+
 ResNet101
+
 ResNet152
 
 Si ritiene che ResNet34 e ResNet50 si comportano bene per questo task, ResNet18 è troppo piccola come rete, ResNet101 e ResNet152 sono invece dei modelli troppo complicati per il problema e le sue caratteristiche (come il limitato dataset)
@@ -82,9 +86,13 @@ The implementation of attention detection is complete. The system uses a dataset
 The images are passed with three numpy arrays: one for the image names, one with the landmarks and one with the 0/1 for the attention classification. The face is cut out of the image and fed to the model. Several ResNet models have been tried:
 
 ResNet18
+
 ResNet34
+
 ResNet50
+
 ResNet101
+
 ResNet152
 
 It is believed that ResNet34 and ResNet50 perform well for this task, ResNet18 is too small as a network, ResNet101 and ResNet152 are models too complicated for the problem and its characteristics (such as the limited dataset)
