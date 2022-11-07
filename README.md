@@ -4,7 +4,7 @@ Il progetto è diviso in due parti:
 
 1.implementare il sistema utilizzando il modello di mediapipe; implementazione disponibile in "Attention-Detection-CANOPIES-project/mediapipe/EyeRecognition/";
 
-2.implementare il sistema creando un modello da zero su pytorch; implementazione disponibile in "".
+2.implementare il sistema creando un modello da zero su pytorch; implementazione disponibile in "Attention-Detection-CANOPIES-project/pyTorch/model+faceDetection.py ".
 
 
 ### 1. MEDIAPIPE 
@@ -65,9 +65,9 @@ Librerie usate: Pytorch, Pytorch models, Mediapipe per il dataset, OpenCV per ra
 
 The project is divided into two parts:
 
-1. to implement the system using the mediapipe model;
+1. to implement the system using the mediapipe model; available in "Attention-Detection-CANOPIES-project/mediapipe/EyeRecognition/".
 
-2. implement the system by creating a model from scratch on pytorch.
+2. implement the system by creating a model from scratch on pytorch; available in "Attention-Detection-CANOPIES-project/pyTorch/model+faceDetection.py".
 
 
 ### 1. MEDIAPIPE
