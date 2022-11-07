@@ -41,18 +41,14 @@ Si è riconosciuta l'attenzione in vista di più persone di fronte alla camera:
 ![Logo](https://github.com/RicGobs/LabVision/blob/main/mediapipe/EyeRecognition/solution3.jpg)
 
 ### 2. PYTORCH
-L'implementazione dell'attention detection non è completa, si sta ricercando al meglio i landmark del voto concentrandosi su quelli delle iridi degli occhi. Addestrato al meglio il modello per fare questo, si concluderà con la classificazione dell'attenzione dei soggetti. Il sistema usa un dataset creato grazie alla prima parte del progetto, l'inferenza permessa è sufficiente per osservare che il modello riesce a predire la zona vicino agli occhi ma la sua accuratezza è minore di quella di Mediapipe.
+L'implementazione dell'attention detection è completa. Il sistema usa un dataset creato grazie alla prima parte del progetto, l'inferenza permessa è sufficiente per osservare che il modello riesce a predire la zona vicino agli occhi ma la sua accuratezza è minore di quella di Mediapipe.
 Le immagini vengono passate con tre numpy array: uno per i nomi delle immagini, uno con i landmarks ed uno con il 0/1 per la classificazione dell'attenzione. Viene ritagliata la faccia dall'immagine e viene data in pasto al modello. Sono stati provati diversi modelli di ResNet:
 
-ResNet18 -> troppo piccola per il modello (ma dopo aver sistemato il dataset, dà buoni risultati), MinValidLoss = 0.0006 (epoch = 46/50)
-
-ResNet34 -> raggiunge buoni risultati, MinValidLoss = 0.0006 (epoch=46/50) 
-
-ResNet50 -> raggiunge buoni risultati, MinValidLoss = 0.0006 (epoch=46/50)
-
-ResNet101 -> non affidabile poiché la loss dopo l'epoca 12 si rialza e rimane costante, MinValidLoss = 0.0011 (epoch=12/40)
-
-ResNet152 -> non affidabile poiché la loss dopo l'epoca 12 si rialza, MinValidLoss = 0.0011 (epoch=11/40)
+ResNet18
+ResNet34
+ResNet50
+ResNet101
+ResNet152
 
 Si ritiene che ResNet34 e ResNet50 si comportano bene per questo task, ResNet18 è troppo piccola come rete, ResNet101 e ResNet152 sono invece dei modelli troppo complicati per il problema e le sue caratteristiche (come il limitato dataset)
 
@@ -61,21 +57,6 @@ _Vantaggi:_ sistema più strutturato sul quale si possono risolvere i problemi p
 _Svantaggi:_ online non sono presenti dataset per il riconoscimento dei 478 landmarks del viso e nemmeno quelli per le iridi degli occhi, sono presenti dei dataset che hanno dai 20 ai 68 landmark ma non permettono il riconoscimento dell'iride, solamente dell'occhio. Questo problema potrebbe essere superato con l'utilizzo di un pose estimation ma non è l'obbiettivo del progetto. Il dataset, osservando alcuni dei risultati ottenuti da Mediapipe è meno performante di quello che si riteneva. La scarsa accuratezza è dovuta quindi anche al dataset non completamente preciso.
 
 Librerie usate: Pytorch, Pytorch models, Mediapipe per il dataset, OpenCV per rappresentare le immagini
-
-
-
-#### Risultato medio del sistema (verde=Ground truth, rosso=Prediction)
-![Logo](https://github.com/RicGobs/LabVision/blob/main/pyTorch/photo/accuracy1.png) 
-![Logo](https://github.com/RicGobs/LabVision/blob/main/pyTorch/photo/accuracy2.png)
-![Logo](https://github.com/RicGobs/LabVision/blob/main/pyTorch/photo/accuracy3.png)
-![Logo](https://github.com/RicGobs/LabVision/blob/main/pyTorch/photo/accuracy4.png)
-
-
-#### Errore tipico di Mediapipe (verde=Ground truth, non completamente affidabile)
-![Logo](https://github.com/RicGobs/LabVision/blob/main/pyTorch/photo/mediapipe_error1.png) 
-![Logo](https://github.com/RicGobs/LabVision/blob/main/pyTorch/photo/mediapipe_error2.png)
-
- file:https://github.com/RicGobs/LabVision/blob/main/pyTorch/resnet1.avi
 ----
 
 The project is divided into two parts:
@@ -97,18 +78,14 @@ Used libraries: Mediapipe and OpenCV
 
 
 ### 2. PYTORCH
-The implementation of attention detection is not complete, we are researching the landmarks of the vote by focusing on those of the irises of the eyes. Trained the model best to do this, it will end with the classification of the subjects' attention. The system uses a dataset created thanks to the first part of the project, the allowed inference is sufficient to observe that the model is able to predict the area near the eyes but its accuracy is less than that of Mediapipe.
+The implementation of attention detection is complete. The system uses a dataset created thanks to the first part of the project, the allowed inference is sufficient to observe that the model is able to predict the area near the eyes but its accuracy is less than that of Mediapipe.
 The images are passed with three numpy arrays: one for the image names, one with the landmarks and one with the 0/1 for the attention classification. The face is cut out of the image and fed to the model. Several ResNet models have been tried:
 
-ResNet18 -> too small for the model (but after the improving of the dataset it works well), MinValidLoss = 0.0006 (epoch = 46/50)
-
-ResNet34 -> achieves good results, MinValidLoss = 0.0006 (epoch = 46/50)
-
-ResNet50 -> achieves good results, MinValidLoss = 0.0006 (epoch = 46/50)
-
-ResNet101 -> not reliable since the loss after epoch 12 rises and remains constant, MinValidLoss = 0.0011 (epoch = 12/40)
-
-ResNet152 -> not reliable since the loss after epoch 12 rises, MinValidLoss = 0.0011 (epoch = 11/40)
+ResNet18
+ResNet34
+ResNet50
+ResNet101
+ResNet152
 
 It is believed that ResNet34 and ResNet50 perform well for this task, ResNet18 is too small as a network, ResNet101 and ResNet152 are models too complicated for the problem and its characteristics (such as the limited dataset)
 
